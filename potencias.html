@@ -1,0 +1,38 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Potencias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Calculadora de Potencias</h1>
+    
+    <h2>Cálculo de Potencias</h2>
+    <input type="number" id="base" placeholder="Base" required>
+    <input type="number" id="exponente" placeholder="Exponente" required>
+    <button id="calcular">Calcular Potencia</button>
+    
+    <p id="resultado"></p>
+    <button onclick="window.location.href='index.html'">Volver</button>
+
+    <script>
+        document.getElementById('calcular').onclick = function() {
+            const base = parseFloat(document.getElementById('base').value);
+            const exponente = parseFloat(document.getElementById('exponente').value);
+            
+            if (isNaN(base) || isNaN(exponente)) {
+                document.getElementById('resultado').innerText = "Por favor, ingrese números válidos.";
+                return;
+            }
+            
+            const resultado = Math.pow(base, exponente);
+            document.getElementById('resultado').innerText = `Resultado: ${resultado}`;
+
+        };
+        function calcularPotencia(base, exponente) {
+            return Math.pow(base, exponente);
+}
+    </script>
+</body>
+</html>
